@@ -20,7 +20,7 @@
 16. [粘连布局](https://keekuun.github.io/relearn-the-front-end.github.io/css3/CSS%E5%B8%83%E5%B1%80%E6%80%BB%E7%BB%93/demo/%E7%B2%98%E8%BF%9E%E5%B8%83%E5%B1%80.html)
 
 
-##一、单列布局
+## 一、单列布局
 ### 1、单列布局：header-content-footer等宽
 
 原理：将header-content-footer统一设置相等的width属性（屏幕小于属性值时会出现滚动条），或者max-width属性（屏幕小于属性值时不会出现滚动条），然后设置margin: 0 auto实现居中效果
