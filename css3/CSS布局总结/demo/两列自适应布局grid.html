@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>两列自适应布局:grid</title>
+	<style>
+		.wrap {
+			display: grid;
+			grid-gap: 20px;
+			/*grid-template-columns: auto 1fr; // 左自适应+右铺满*/
+			grid-template-columns: 1fr auto; // 右自适应+左铺满
+		}
+
+		.left {
+			background-color: cyan;
+		}
+
+		.right {
+			background-color: aliceblue;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="left">
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+	</div>
+	<div class="right">
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+	</div>
+</div>
+</body>
+</html>

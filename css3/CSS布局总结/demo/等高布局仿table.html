@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：等高布局（仿table）</title>
+	<style>
+		.table{
+			display: table;
+			width: auto;
+			min-width: 1000px;
+			margin: 0 auto;
+			height: 500px;
+		}
+		.table-row{
+			display: table-row;
+		}
+		.table-cell{
+			display: table-cell;
+			height: 100%;
+		}
+
+		.cel-left{
+			background: #ff88b2;
+			width: 20%;
+		}
+		.cel-center{
+			background: #a5f5c7;
+			width: 60%;
+		}
+		.cel-right{
+			background: skyblue;
+			width: 20%;
+		}
+	</style>
+</head>
+<body>
+<div class="table">
+	<div class="table-row">
+		<div class="table-cell cel-left">
+			<div class="left">每一个不曾起舞的日子，</div>
+		</div>
+		<div class="table-cell cel-center">
+			<div class="center">都是对生命的辜负！</div>
+		</div>
+		<div class="table-cell cel-right">
+			<div class="right">加油骚年！</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

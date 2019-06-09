@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：float布局</title>
+	<style>
+		* {
+			margin: 0;
+		}
+		aside.left {
+			background-color: seagreen;
+			float: left;
+			width: 200px;
+		}
+
+		aside.right {
+			background-color: whitesmoke;
+			float: right;
+			width: 200px;
+		}
+
+		article.center {
+			background-color: bisque;
+		}
+	</style>
+</head>
+<body>
+<main>
+	<aside class="left">
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+		<h2>左青龙</h2>
+	</aside>
+	<!-- 右栏部分要写在中间内容之前-->
+	<!-- 右栏部分要写在中间内容之前-->
+	<!-- 右栏部分要写在中间内容之前-->
+	<aside class="right">
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+		<h2>右白虎</h2>
+	</aside>
+
+	<article class="center">
+		<h2>中间住着二百五</h2>
+		<h2>中间住着二百五</h2>
+		<h2>中间住着二百五</h2>
+		<h2>中间住着二百五</h2>
+		<h2>中间住着二百五</h2>
+	</article>
+
+</main>
+</body>
+</html>

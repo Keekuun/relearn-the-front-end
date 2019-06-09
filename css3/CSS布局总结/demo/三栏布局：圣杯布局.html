@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：圣杯布局</title>
+	<style>
+		* {
+			margin: 0;
+		}
+
+		main.wrap {
+			/*给左右栏预留空间*/
+			padding-left: 200px;
+			padding-right: 200px;
+		}
+
+		.left, .center, .right {
+			height: 200px;
+			/*全部float：left*/
+			float: left;
+		}
+
+		article.center {
+			background-color: skyblue;
+			width: 100%;
+			/*height: 300px;*/
+		}
+
+		aside.left {
+			background-color: #a5f5c7;
+			width: 200px;
+			margin-left: -100%;
+			position: relative;
+			left: -200px;
+		}
+
+		aside.right {
+			background-color: #ff88b2;
+			width: 200px;
+			margin-left: -200px;
+			position: relative;
+			right: -200px;
+		}
+	</style>
+</head>
+<body>
+<main class="wrap">
+	<!--先先写中间部分-->
+	<!--先先写中间部分-->
+	<!--先先写中间部分-->
+	<article class="center">
+		<h3>像吃了花椒的邻居，</h3>
+	</article>
+
+	<aside class="left">
+		<h3>我还是很喜欢你，</h3>
+	</aside>
+
+	<aside class="right">
+		<h3>麻了隔壁。（😂）</h3>
+	</aside>
+</main>
+</body>
+</html>

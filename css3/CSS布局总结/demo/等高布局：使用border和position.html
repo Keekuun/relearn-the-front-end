@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：等高布局（border+position）</title>
+	<style>
+		.wrap{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.left{
+			background: #50c5f5;
+			position: absolute;
+			width: 200px;
+			height:500px;
+		}
+		.center{
+			background: #ff6600;
+			border-right: 200px solid #50c5f5;
+			border-left: 200px solid #f5cabb;
+			position: absolute;
+			width: 800px;
+			height: 500px;
+		}
+		.right{
+			background: #f5cabb;
+			position: absolute;
+			width: 200px;
+			height:500px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="left"></div>
+	<div class="center"></div>
+	<div class="right"></div>
+</div>
+</body>
+</html>

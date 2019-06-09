@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：flex布局</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		main.wrap{
+			display: flex;
+		}
+		.left,.center,.right{
+			height: 500px;
+		}
+		aside.left{
+			background-color: #a5f5c7;
+			width: 200px;
+		}
+		article.center{
+			background-color: skyblue;
+			flex: 1;
+		}
+		aside.right{
+			background-color: #ff88b2;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+<main class="wrap">
+	<aside class="left">
+		<h3>你站在桥上看风景，</h3>
+	</aside>
+	<article class="center">
+		<h3>看风景人在楼上看你。</h3>
+	</article>
+	<aside class="right">
+		<h3>明月装饰了你的窗子，</h3>
+		<h3>你装饰了别人的梦。</h3>
+	</aside>
+</main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局：绝对定位布局</title>
+	<style>
+		* {
+			margin: 0;
+		}
+		.left,.center,.right{
+			position: absolute;
+			height: 400px;
+		}
+		aside.left {
+			background-color: bisque;
+			left: 0;
+		}
+
+		article.center {
+			background-color: aliceblue;
+			left: 200px;
+			right: 200px;
+		}
+
+		aside.right {
+			background-color: whitesmoke;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+<main class="wrap">
+	<aside class="left">
+		<h3>有人喜欢大城市</h3>
+	</aside>
+	<article class="center">
+		<h3>有人喜欢小城市</h3>
+	</article>
+	<aside class="right">
+		<h3>我喜欢有你的城市</h3>
+	</aside>
+</main>
+</body>
+</html>

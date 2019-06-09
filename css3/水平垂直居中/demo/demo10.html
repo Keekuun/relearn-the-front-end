@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>垂直居中：定位属性-定高</title>
+	<style>
+		#father{
+			width: 666px;
+			height: 333px;
+			background-color: seagreen;
+			position: relative;
+		}
+		#son{
+			height: 120px;
+			background-color: skyblue;
+			position: absolute;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+
+			/*margin-top: -60px;*/
+		}
+	</style>
+</head>
+
+<body>
+<div id="father">
+	<div id="son">我想牵着你的手，从心动到古稀！---酒馆</div>
+</div>
+</body>
+</html>
