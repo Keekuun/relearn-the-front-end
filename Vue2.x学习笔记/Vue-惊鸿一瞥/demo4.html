@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>事件冒泡,默认行为,键盘事件</title>
+	<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+	<script src="js/vue.js"></script>
+	<script>
+      /**
+       * 自定义键位别名
+       */
+      Vue.config.keyCodes={
+          a:65,
+      };
+      window.onload = () => {
+          const app = new Vue({
+              el: '#app',// vue2.x不允许将vue实例挂载到<html>或<body>元素
+              data: { // 存储数据
+                  message: 'Hello Vue!',
+              },
+              methods: { // 存储方法
+                  print(){
+                      console.log(111);
+									},
+									show(){
+                      // e.stopPropagation(); // 原生方式阻止事件冒泡
+                     console.log(222);
+									},
+									log(){
+                      // e.preventDefault(); // 原生方式阻止事件默认行为
+                      console.log(333)
+									},
+                  showCode(e){
+                      console.log(e);
+                      console.log(e.key);
+                      console.log(e.keyCode);
+									}
+              }
+          })
+      }
+	</script>
+</head>
+<body>
+<div id="app">
+	<div @click="print">
+		<div @click="show">事件冒泡</div>
+	</div>
+
+	<div @click="print">
+		<div @click.stop="show">阻止事件冒泡</div>
+	</div>
+
+	<a href="#" @click="log">带默认行为</a>
+	<a href="#" @click.prevent="log">阻止默认行为</a>
+
+
+	<br>
+	<hr>
+	<!-- 键盘事件：@keydown、@keypress、@keyup -->
+	用户名：<input type="text" @keydown="show" @keypress="log" @keyup="print">
+
+	<!-- 事件修饰符 -->
+	<button @click.once="print">只触发一次</button>
+
+	<!-- 简化按键的判断 -->
+	显示按键:<input type="text" @keydown="showCode($event)">
+
+	Enter:<input type="text" @keydown.enter="print">
+
+	A:<input type="text" @keydown.65="print">
+	A:<input type="text" @keydown.a="print">
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue常用指令</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!--<script src="js/vue.js"></script>-->
+	<script>
+      window.onload = () => {
+          const app = new Vue({
+              el: '#app',// vue2.x不允许将vue实例挂载到<html>或<body>元素
+              data: {
+                  message: 'Hello Vue!',
+									name: 'vue',
+									age: 6,
+									arr: [1, 2, 3, 4],
+									json: {
+                      name: 'vue',
+											age: 6,
+											msg: 'Vue 666'
+									}
+              }
+          })
+      }
+	</script>
+</head>
+<body>
+<div id="app">
+	{{ message }}
+
+	<label for="name">用户名：</label>
+	<input type="text" id="name" v-model="name">
+
+	<br>
+	<p>{{name}}</p>
+	<p>{{age}}</p>
+	<p>{{arr}}</p>
+	<p>{{json}}</p>
+	<p>{{json.msg}}</p>
+
+	<ul>
+	<li v-for="num in arr">{{num}}</li>
+	</ul>
+
+	<ol>
+		<li v-for="num of arr">{{num}}</li>
+	</ol>
+
+	<ul>
+		<li v-for="(num,index) of arr">{{index}}-{{num}}</li>
+	</ul>
+
+	<ul>
+		<li v-for="value in json">{{value}}</li>
+	</ul>
+
+	<ul>
+		<li v-for="(value,key) in json">{{key}}:{{value}}</li>
+	</ul>
+
+	<ul>
+		<li v-for="(value,key,index) in json">{{index}}-{{key}}:{{value}}</li>
+	</ul>
+</div>
+</body>
+</html>

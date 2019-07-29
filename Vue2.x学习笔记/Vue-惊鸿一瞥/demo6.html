@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法以及自定义过滤器</title>
+	<script src="js/vue.js"></script>
+	<script>
+      /**
+       * 自定义全局过滤器
+       */
+      Vue.filter('addZero',function(data){
+          // console.log(data);
+          return data<10?'0'+data:data;
+      });
+      Vue.filter('number',(data,n) => {
+				// console.log(data,n);
+				// return data.toFixed(n);
+				return Math.round(data * 10 ** n)/(10 ** n);
+			});
+      Vue.filter('date',data => {
+          let d=new Date(data);
+          return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+      });
+      window.onload = function () {
+          let vm = new Vue({
+              el: '#app',
+              data: {
+                  msg: 'welcome to vue',
+                  currentTime:Date.now()
+              },
+              filters:{ //局部过滤器,会覆盖掉同名全局过滤器
+                  number:(data,n) => {
+                      // return data.toFixed(n);
+                      return Math.round(data * 10 ** n)/(10 ** n);
+                  },
+              },
+              created(){
+                  alert(111);
+              }
+          });
+      }
+	</script>
+	<style>
+		/* 必须配置css样式，否则不生效 */
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<input type="text" v-model="msg">
+
+	<!-- v-cloak防止刷新闪烁出现{{}}-->
+	<h3>aaa<span v-cloak>{{msg}}</span></h3>
+
+	<!-- v-text相当于{{}}可以避免刷新闪烁出现{{}}-->
+	<h3 v-text="msg"></h3>
+
+	<h3 v-html="msg"></h3>
+
+	<!-- v-once只渲染一次-->
+	<h3 v-once>{{msg}}</h3>
+
+	<!-- v-pre保留{{}}等。。-->
+	<h3 v-pre>{{msg}}</h3>
+
+	<h3>{{5 | addZero}}</h3>
+	<h3>{{12 | addZero}}</h3>
+
+	<h3>{{3.1415927 | number(2)}}</h3>
+	<h3>{{2.045 | number(2)}}</h3>
+
+	<h3>{{currentTime | date}}</h3>
+</div>
+</body>
+</html>

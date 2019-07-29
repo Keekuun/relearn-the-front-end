@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>指令和事件</title>
+	<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+	<script src="js/vue.js"></script>
+	<script>
+      window.onload = () => {
+          const app = new Vue({
+              el: '#app',// vue2.x不允许将vue实例挂载到<html>或<body>元素
+              data: { // 存储数据
+                  message: 'Hello Vue!',
+                  name: 'vue',
+                  age: 6,
+                  arr: [1, 2, 3, 4],
+                  json: {
+                      name: 'vue',
+                      age: 6,
+                      msg: 'Vue 666'
+                  },
+									flag: true,
+                  url:'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png',
+                  w:'200px',
+                  h:'100px'
+              },
+							methods: { // 存储方法
+                 add(){
+                     console.log(this);
+                     // console.log(this.arr.slice(-1));
+                     this.arr.push(+this.arr.slice(-1) + 1)
+								 },
+									mouseover(e){
+                     console.log(e);
+                      console.log('鼠标经过');
+									},
+									dbclick(){
+                      console.log('双击');
+									},
+                  change(){
+                      this.flag=!this.flag;
+                  }
+							}
+          })
+      }
+	</script>
+</head>
+<body>
+<div id="app">
+	<!--v-bind属性绑定，简写`:属性`-->
+	<img :src="url" :width="w" :height="h">
+	<p>v-show改变css的display属性；v-if删除和重绘</p>
+	<div style="width: 100px;height: 100px; background-color: red" v-if="flag">显示数据</div>
+	<ul v-show="flag">
+		<li v-for="num in arr">{{num}}</li>
+	</ul>
+	<button v-on:click="add">添加数据</button>
+	<button @click="add">再次添加数据</button>
+
+	<button @mouseover="mouseover($event)">鼠标经过</button>
+	<button @dblclick="dbclick">鼠标双击</button>
+
+	<button @click="flag=!flag">隐藏/显示</button>
+</div>
+</body>
+</html>

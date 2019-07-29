@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>属性绑定</title>
+	<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+	<script src="js/vue.js"></script>
+	<script>
+      window.onload = () => {
+          const app = new Vue({
+              el: '#app',// vue2.x不允许将vue实例挂载到<html>或<body>元素
+              data: { // 存储数据
+                  msg: 'hello vue!',
+                  url:'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png',
+                  w:'200px',
+                  h:'100px',
+									aa: 'aa',
+									bb: 'bb',
+                  myclass: {
+                      aa: true,
+											bb: true,
+									},
+                  xx:{color:'blue',fontSize:'30px'},
+                  yy:{backgroundColor:'#ff7300'}
+              },
+              methods: { // 存储方法
+              },
+          })
+      }
+	</script>
+
+	<style>
+		.aa{
+			color:red;
+			font-size:20px;
+		}
+		.bb{
+			background-color:#ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<!-- v-bind属性绑定，简写`:属性`-->
+	<img :src="url" :width="w" :height="h">
+
+	<!--class和style属性-->
+	<p :class="aa">{{msg}}1</p>
+	<p :class="[aa, bb]">{{msg}}2</p>
+
+	<p :class="{aa:true, bb:false}">{{msg}}3</p>
+	<p :class="myclass">{{msg}}4</p>
+
+	<p :style="[xx,yy]">{{msg}}5</p>
+</div>
+</body>
+</html>
